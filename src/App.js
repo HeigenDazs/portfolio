@@ -7,13 +7,16 @@ import About from './components/About';
 function App() {
   return (
     <div>
+
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />}></Route>
           <Route path="about" element={<About />}></Route>
         </Route>
       </Routes>
-    </div>
+      <div className='bg'>
+      </div>
+    </div >
   );
 }
 

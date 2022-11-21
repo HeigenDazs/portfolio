@@ -10,13 +10,13 @@
 }
 
 .tags {
-    color: #ffd700;
+    color: #19c6ff;
     opacity: 0.6;
     position: absolute;
     bottom: 0;
     left: 120px;
     font-size: 18px;
-    font-family: 'La Belle Aurore';
+    font-family: 'Chakra Petch';
 }
 
 .bottom-tag-html {
@@ -51,8 +51,8 @@
 
         h1 {
             font-size: 53px;
-            font-family: 'Coolvetica';
-            color: #ffd700;
+            font-family: 'Chakra Petch';
+            color: #19c6ff;
             font-weight: 400;
             margin-top: 0;
             position: relative;
@@ -61,7 +61,7 @@
 
             &::before{
                 content: '<h1>';
-                font-family: 'La Belle Aurore';
+                font-family: 'Chakra Petch';
                 font-size: 18px;
                 position: absolute;
                 margin-top: -10px;
@@ -72,7 +72,7 @@
 
             &::after {
                 content: '<h1 />';
-                font-family: 'La Belle Aurore';
+                font-family: 'Chakra Petch';
                 font-size: 18px;
                 line-height: 18px;
                 position: absolute;
@@ -86,7 +86,7 @@
         p {
             font-style: 13px;
             color: #fff;
-            font-family: sans-serif;
+            font-family: 'Chakra Petch';
             font-weight: 300;
             min-width: fit-content;
             animation: pulse 1s;

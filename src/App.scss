@@ -1,7 +1,8 @@
-$primary-color: #ffd700;
+$primary-color: #19c6ff;
 
 @import 'animate.css';
 @import '~loaders.css/src/animations/pacman.scss';
+@import url('https://fonts.googleapis.com/css?family=Chakra+Petch');
 
 @font-face {
   font-family: 'Helvetica Neue';
@@ -20,7 +21,7 @@ $primary-color: #ffd700;
 
 input,
 textarea {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Chakra Petch', sans-serif;
 }
 
 .loader-hidden {
@@ -62,9 +63,32 @@ textarea {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #ffd700;
-  border-color: #ffd700 transparent #ffd700 transparent;
+  border: 6px solid #19c6ff;
+  border-color: #19c6ff transparent #19c6ff transparent;
   animation: lds-dual-ring 1.2s linear infinite;
+}
+
+.bg {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 300% 300%;
+  background-image: linear-gradient(
+        -45deg, 
+        rgb(0, 0, 0) 0%, 
+        rgb(50, 0, 0) 25%, 
+        rgb(131, 0, 0) 80%, 
+        rgb(0, 0, 0) 100%
+  );  
+  animation: AnimateBG 10s ease infinite;
+}
+
+@keyframes AnimateBG { 
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 @keyframes lds-dual-ring {

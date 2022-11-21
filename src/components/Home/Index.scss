@@ -14,13 +14,13 @@
         font-size: 56px;
         font-size: 53px;
         margin: 0;
-        font-family: 'Coolvetica';
+        font-family: 'Chakra Petch';
         font-weight: 400;
 
         &:before {
             content: '<h1>';
-            font-family: 'La Belle Aurore', cursive;
-            color: #ffd700;
+            font-family: 'Chakra Petch', cursive;
+            color: #19c6ff;
             font-size: 18px;
             position: absolute;
             margin-top: -40px;
@@ -30,8 +30,8 @@
 
         &:after {
             content: '<h1>';
-            font-family: 'La Belle Aurore', cursive;
-            color: #ffd700;
+            font-family: 'Chakra Petch', cursive;
+            color: #19c6ff;
             font-size: 18px;
             position: absolute;
             margin-top: 18px;
@@ -45,7 +45,7 @@
             margin-left: 20px;
             opacity: 0;
             height: auto;
-            animation: rotateIn 1s linear both;
+            animation: fadeInRight 1s linear both;
             animation-delay: 1.4s;
         }
     }
@@ -60,25 +60,314 @@
         animation: fadeIn 1s 1.8s backwards;
     }
 
-    .flat-button {
-        color: #ffd700;
-        font-size: 13px;
-        font-weight: 400;
-        letter-spacing: 4px;
-        font-family: sans-serif;
+    .flat-button,
+    .flat-button::after {
+        font-family: 'Chakra Petch', sans-serif;
+        padding: 16px 20px;
+        font-size: 18px;
+        background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+        border: 0;
+        color: #fff;
+        letter-spacing: 3px;
+        line-height: 1;
+        box-shadow: 6px 0px 0px #00e6f6;
+        outline: transparent;
+        position: relative;
         text-decoration: none;
-        padding: 10px 18px;
-        border: 1px solid #ffd700;
-        margin-top: 25px;
-        float: left;
-        animation: fadeInA 1s 1.8s backwards;
-        white-space: nowrap;
+    }
 
-        &:hover {
-            background: #ffd700;
-            color: #333;
+    .flat-button::after {
+        --slice-0: inset(50% 50% 50% 50%);
+        --slice-1: inset(80% -6px 0 0);
+        --slice-2: inset(50% -6px 30% 0);
+        --slice-3: inset(10% -6px 85% 0);
+        --slice-4: inset(40% -6px 43% 0);
+        --slice-5: inset(80% -6px 5% 0);
+        content: "HOVER ME";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #ff013c 5%);
+        text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+        clip-path: var(--slice-0);
+    }
+
+    .flat-button:hover::after {
+        animation: 1s glitch;
+        animation-timing-function: steps(2, end);
+    }
+
+    @keyframes glitch {
+        0% {
+            clip-path: var(--slice-1);
+            transform: translate(-20px, -10px);
+        }
+
+        10% {
+            clip-path: var(--slice-3);
+            transform: translate(10px, 10px);
+        }
+
+        20% {
+            clip-path: var(--slice-1);
+            transform: translate(-10px, 10px);
+        }
+
+        30% {
+            clip-path: var(--slice-3);
+            transform: translate(0px, 5px);
+        }
+
+        40% {
+            clip-path: var(--slice-2);
+            transform: translate(-5px, 0px);
+        }
+
+        50% {
+            clip-path: var(--slice-3);
+            transform: translate(5px, 0px);
+        }
+
+        60% {
+            clip-path: var(--slice-4);
+            transform: translate(5px, 10px);
+        }
+
+        70% {
+            clip-path: var(--slice-2);
+            transform: translate(-10px, 10px);
+        }
+
+        80% {
+            clip-path: var(--slice-5);
+            transform: translate(20px, -10px);
+        }
+
+        90% {
+            clip-path: var(--slice-1);
+            transform: translate(-10px, 0px);
+        }
+
+        100% {
+            clip-path: var(--slice-1);
+            transform: translate(0);
         }
     }
 
+    :root {
+        --f-size: 15;
+        --f-unit: 1vmin;
+        --f: calc(var(--f-size) * var(--f-unit));
+        --bg: #181717;
+    }
+
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Chakra Petch', cursive; //'Kanit', sans-serif;
+        font-size: var(--f);
+
+        background-color: var(--bg);
+        display: flex;
+        min-height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    p {
+        flex: 1;
+        line-height: .75;
+        margin: auto;
+        color: #1af0dc;
+        text-align: center;
+        transform: scaleX(var(--scale, 1));
+        animation: glitch-p 11s infinite alternate;
+
+        &::before,
+        &::after {
+            --top: 0; // offset from top [0 - 10]
+            --left: 0; // offset from left [0.001 - 1]
+            --v-height: 30%; // visible part
+
+            --n-tenth: calc(var(--f-size) * .1 * var(--top));
+            --t-cut: calc(var(--n-tenth) / var(--f-size) * 100%);
+            --b-cut: calc(var(--t-cut) + var(--v-height));
+
+            content: attr(data-text);
+            position: absolute;
+            width: 100%;
+            left: 0;
+            text-align: center;
+
+            transform: translateX(calc(var(--left) * 100%));
+
+            // this helps to get rid of pixelization
+            filter: drop-shadow(0 0 transparent);
+
+            text-shadow: calc(var(--left) * -3em) 0 .02em lime,
+                calc(var(--left) * -6em) 0 .02em #ff00e1;
+
+            background-color: var(--bg);
+            clip-path: polygon(0% var(--t-cut), 100% var(--t-cut), 100% var(--b-cut), 0% var(--b-cut));
+        }
+
+        &::before {
+            animation: glitch-b 1.7s infinite alternate-reverse;
+        }
+
+        &::after {
+            animation: glitch-a 3.1s infinite alternate;
+        }
+    }
+
+    @keyframes glitch-p {
+        17% {
+            --scale: .87;
+        }
+
+        31% {
+            --scale: 1.1;
+        }
+
+        37% {
+            --scale: 1.3;
+        }
+
+        47% {
+            --scale: .91;
+        }
+
+        87% {
+            --scale: 1;
+        }
+    }
+
+    @keyframes glitch-a {
+
+        10% {
+            --top: 0;
+            --left: 0;
+        }
+
+        30% {
+            --top: 0;
+            --left: 0;
+        }
+
+        50% {
+            --top: 0;
+            --left: 0;
+        }
+
+        70% {
+            --top: 0;
+            --left: 0;
+        }
+
+        90% {
+            --top: 0;
+            --left: 0;
+        }
+
+        0% {
+            --v-height: 15%;
+        }
+
+        20% {
+            --left: .005;
+        }
+
+        40% {
+            --left: .01;
+            --v-height: 20%;
+            --top: 3;
+        }
+
+        60% {
+            --left: .03;
+            --v-height: 25%;
+            --top: 6;
+        }
+
+        80% {
+            --left: .07;
+            --v-height: 5%;
+            --top: 8;
+        }
+
+        100% {
+            --left: .083;
+            --v-height: 30%;
+            --top: 1;
+        }
+    }
+
+    @keyframes glitch-b {
+
+        10% {
+            --top: 0;
+            --left: 0;
+        }
+
+        30% {
+            --top: 0;
+            --left: 0;
+        }
+
+        50% {
+            --top: 0;
+            --left: 0;
+        }
+
+        70% {
+            --top: 0;
+            --left: 0;
+        }
+
+        90% {
+            --top: 0;
+            --left: 0;
+        }
+
+        0% {
+            --v-height: 15%;
+            --top: 10;
+        }
+
+        20% {
+            --left: -.005;
+        }
+
+        40% {
+            --left: -.01;
+            --v-height: 17%;
+            --top: 3;
+        }
+
+        60% {
+            --left: -.03;
+            --v-height: 35%;
+            --top: 6;
+        }
+
+        80% {
+            --left: -.07;
+            --v-height: 5%;
+            --top: 8;
+        }
+
+        100% {
+            --left: -.083;
+            --v-height: 30%;
+            --top: 1;
+        }
+    }
 
 }

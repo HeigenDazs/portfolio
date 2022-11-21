@@ -23,17 +23,14 @@ const Home = () => {
             <div className="container home-page">
                 <div className="text-zone">
                     <h1>
-                        <span className={letterClass}>H</span>
-                        <span className={`${letterClass} _12`}>i,</span>
-                        <br />
-                        <span className={`${letterClass} _13`}>I</span>
-                        <span className={`${letterClass} _14`}>'m</span>
-                        <img src={LogoTitle} alt="developer"></img>
-                        <AnimatedLetters letterClass={letterClass} strArray={nameArray} idx={15}> </AnimatedLetters>
-                        <br />
-                        <AnimatedLetters letterClass={letterClass} strArray={jobArray} idx={22}> </AnimatedLetters>
+                        <span>Hello World, I'm</span>
+                        <p data-text="THANAPHON"> THANAPHON</p>
+                        <span>Engineering Student</span>
                     </h1>
                     <h2>Study in Electronic Engineering Computer at KMUTNB</h2>
+                    <hr />
+                    <br />
+                    <br />
                     <Link to="/contact" className='flat-button'>CONTACT ME</Link>
                 </div>
                 <Logo></Logo>
