@@ -4,6 +4,8 @@
     position: absolute;
 }
 
+
+
 .top-tags {
     bottom: auto;
     top: 35px;
@@ -38,8 +40,9 @@
     animation-delay: 1s;
 }
 
-.about-page {
-    .text-zone{
+.container.about-page,
+.container.contact-page {
+    .text-zone {
         position: absolute;
         left: 10%;
         top: 50%;
@@ -59,7 +62,7 @@
             margin-bottom: 40px;
             left: 10px;
 
-            &::before{
+            &::before {
                 content: '<h1>';
                 font-family: 'Chakra Petch';
                 font-size: 18px;

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import LogoTitle from '../../assets/images/logo-t.png';
 import AnimatedLetters from '../AnimatedLetters';
@@ -23,15 +24,22 @@ const Home = () => {
             <div className="container home-page">
                 <div className="text-zone">
                     <h1>
-                        <span>Hello World, I'm</span>
-                        <p data-text="THANAPHON"> THANAPHON</p>
-                        <span>Engineering Student</span>
+                        <div className='gdiv' title='&nbsp;&nbsp;Hello World, I m'>&nbsp;&nbsp;Hello World, I'm</div>
+                        <p data-text="THANAPHON">THANAPHON</p>
+                        <div className='gdiv' title='Engineering Student'>Engineering Student</div>
                     </h1>
+                    <br />
+                    <br />
                     <h2>Study in Electronic Engineering Computer at KMUTNB</h2>
                     <hr />
                     <br />
                     <br />
                     <Link to="/contact" className='flat-button'>CONTACT ME</Link>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <Link to="/about" className='flat-button'>ABOUT ME</Link>
                 </div>
                 <Logo></Logo>
             </div>
