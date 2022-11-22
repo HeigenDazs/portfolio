@@ -1,7 +1,6 @@
 $primary-color: #19c6ff;
 
 @import 'animate.css';
-@import '~loaders.css/src/animations/pacman.scss';
 @import url('https://fonts.googleapis.com/css?family=Chakra+Petch');
 
 @font-face {
@@ -22,24 +21,6 @@ $primary-color: #19c6ff;
 input,
 textarea {
   font-family: 'Chakra Petch', sans-serif;
-}
-
-.loader-hidden {
-  display: none;
-}
-
-.loader-active {
-  display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  width: 50px;
-  height: 50px;
-  animation: fadeOut 1s 1s;
-  animation-fill-mode: forwards;
 }
 
 .lds-dual-ring {
@@ -63,9 +44,146 @@ textarea {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #19c6ff;
-  border-color: #19c6ff transparent #19c6ff transparent;
+  border: 6px solid #17FEFF;
+  border-color: #17FEFF transparent #17FEFF transparent;
   animation: lds-dual-ring 1.2s linear infinite;
+}
+
+.loader {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  height: 80px;
+}
+
+.scanner span {
+  width: 100px;
+  height: 30px;
+  margin-top: 100px;
+  color: transparent;
+  font-size: 2rem;
+  position: absolute;
+  overflow: hidden;
+  font-family: 'Chakra Petch', sans-serif;
+  animation: fadeOut 1s 1s;
+  animation-fill-mode: forwards;
+}
+
+.scanner span::before {
+  content: "Loading.....";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-right: 4px solid #17FEFF;
+  overflow: hidden;
+  color: #17FEFF;
+  animation: load91371 2s linear infinite;
+}
+
+@keyframes load91371 {
+
+  0% {
+    width: 0;
+  }
+
+  10% {
+    width: 0;
+  }
+
+  100% {
+    width: 0;
+  }
+
+  10% {
+    border-right-color: transparent;
+  }
+
+  20% {
+    border-right-color: transparent;
+  }
+
+  30% {
+    border-right-color: transparent;
+  }
+
+  40% {
+    border-right-color: transparent;
+  }
+
+  50% {
+    border-right-color: transparent;
+  }
+
+  60% {
+    border-right-color: transparent;
+  }
+
+  70% {
+    border-right-color: transparent;
+  }
+
+  80% {
+    border-right-color: transparent;
+  }
+
+  90% {
+    border-right-color: transparent;
+  }
+
+  100% {
+    border-right-color: transparent;
+  }
+
+  11% {
+    border-right-color: #17FEFF;
+  }
+
+  21% {
+    border-right-color: #17FEFF;
+  }
+
+  31% {
+    border-right-color: #17FEFF;
+  }
+
+  41% {
+    border-right-color: #17FEFF;
+  }
+
+  51% {
+    border-right-color: #17FEFF;
+  }
+
+  61% {
+    border-right-color: #17FEFF;
+  }
+
+  71% {
+    border-right-color: #17FEFF;
+  }
+
+  81% {
+    border-right-color: #17FEFF;
+  }
+
+  91% {
+    border-right-color: #17FEFF;
+  }
+
+  60% {
+    width: 100%;
+  }
+
+  80% {
+    width: 100%;
+  }
 }
 
 .bg {
@@ -75,20 +193,26 @@ textarea {
   align-items: center;
   justify-content: center;
   background-size: 300% 300%;
-  background-image: linear-gradient(
-        -45deg, 
-        rgb(0, 0, 0) 0%, 
-        rgb(50, 0, 0) 25%, 
-        rgb(131, 0, 0) 80%, 
-        rgb(0, 0, 0) 100%
-  );  
+  background-image: linear-gradient(-45deg,
+      rgb(0, 0, 0) 0%,
+      rgb(50, 0, 0) 25%,
+      rgb(131, 0, 0) 80%,
+      rgb(0, 0, 0) 100%);
   animation: AnimateBG 10s ease infinite;
 }
 
-@keyframes AnimateBG { 
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+@keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
 }
 
 @keyframes lds-dual-ring {

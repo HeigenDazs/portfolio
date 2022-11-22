@@ -12,7 +12,7 @@ const Contact = () => {
         e.preventDefault()
 
         emailjs
-            .sendForm('gmail', 'template_YeJhZkgb', form.current, 'your-token')
+            .sendForm('gmail', 'template_YeJhZkgb', form.current, 'service_7pojh15')
             .then(
                 () => {
                     alert('Message successfully sent!')
@@ -75,7 +75,12 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <div class="lds-dual-ring"></div>
+            <div className='loader'>
+                <div class="lds-dual-ring"></div>
+                <div class="scanner">
+                    <span>Loading.....</span>
+                </div>
+            </div>
         </>
     )
 

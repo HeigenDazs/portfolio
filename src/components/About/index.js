@@ -44,7 +44,12 @@ const About = () => {
                 </div>
 
             </div>
-            <div class="lds-dual-ring"></div>
+            <div className='loader'>
+                <div class="lds-dual-ring"></div>
+                <div class="scanner">
+                    <span>Loading.....</span>
+                </div>
+            </div>
         </>
     )
 }

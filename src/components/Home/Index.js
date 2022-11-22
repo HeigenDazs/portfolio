@@ -20,7 +20,12 @@ const Home = () => {
 
     return (
         <>
-            <div class="lds-dual-ring"></div>
+            <div className='loader'>
+                <div class="lds-dual-ring"></div>
+                <div class="scanner">
+                    <span>Loading.....</span>
+                </div>
+            </div>
             <div className="container home-page">
                 <div className="text-zone">
                     <h1>
