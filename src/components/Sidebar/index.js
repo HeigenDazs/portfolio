@@ -36,23 +36,6 @@ const Sidebar = () => (
                 <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e"></FontAwesomeIcon>
             </NavLink>
         </nav>
-        <ul>
-            <li>
-                <a target="_blank" rel='nonreferrer' href='https://www.facebook.com/thanaphon.sritongon'>
-                    <FontAwesomeIcon icon={faLinkedin} color='#4d4d4e'></FontAwesomeIcon>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" rel='nonreferrer' href='https://github.com/HeigenDazs'>
-                    <FontAwesomeIcon icon={faGithub} color='#4d4d4e'></FontAwesomeIcon>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" rel='nonreferrer' href='https://www.facebook.com/thanaphon.sritongon'>
-                    <FontAwesomeIcon icon={faYoutube} color='#4d4d4e'></FontAwesomeIcon>
-                </a>
-            </li>
-        </ul>
     </div>
 )
 
